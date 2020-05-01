@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript">
-            setTimeout(() => {
-                window.location.href = "https://codereactor.tk/"
-            }, 7000);
-        </script>
-        <link rel="icon" href="https://cdn.codereactor.tk/images/codereactor/codereactor-square.jpeg" />
-        <link rel="stylesheet" href="https://cdn.codereactor.tk/css/codereactor/cdn/index.css" />
+        <link rel="icon" href="https://cdn.codereactor.tk/codereactor/square.ico" />
+        <link rel="stylesheet" href="./internal/css/index.css" />
         <meta content="noindex, nofollow" name="robots" />
-        <meta content="This is only a cdn contaning our files not a website." name="description" />
-        <title>CodeReactor CDN</title>
+        <meta content="Official CDN from Code Reactor containing your files" name="description" />
+        <title>CodeReactor - CDN</title>
+        <script src="https://api.codereactor.tk/scripts/mobile-detection.js"></script>
+        <script>
+            function onload() {
+                if (isMobile()) {
+                    document.getElementById("main").className = "mobile";
+                } else {
+                    document.getElementById("main").className = "desktop";
+                }
+            }
+        </script>
     </head>
-    <body>
-        <img src="https://cdn.codereactor.tk/images/codereactor/codereactor-big.png" alt="CodeReactor" />
-        <p>
-            This is only a cdn with our files, we are redirecting to the correct CodeReactor website...
-        </p>
+    <body onload="onload()">
+        <div class="placeholder" id="main">
+            <img id="logo" src="codereactor/horizontal.png" />
+        </div>
     </body>
 </html>
