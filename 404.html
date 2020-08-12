@@ -6,23 +6,23 @@
         <meta content="noindex, nofollow" name="robots" />
         <meta content="Official CDN from Code Reactor containing your files" name="description" />
         <title>CodeReactor - CDN</title>
-        <script src="https://api.codereactor.tk/scripts/mobile-detection.js"></script>
+        <script src="https://codereactor.tk/internal/script/mobile-utils.js"></script>
         <script>
             function onload() {
-                if (isMobile()) {
-                    document.getElementById("main").className = "mobile";
+                if (isUserAgentMobile()) {
+                    document.getElementById("main").classList.add("mobile");
                 } else {
-                    document.getElementById("main").className = "desktop";
+                    document.getElementById("main").classList.add("desktop");
                 }
             }
         </script>
     </head>
-    <body onload="onload()">
-        <div class="placeholder" id="main">
-            <img id="logo" src="https://cdn.codereactor.tk/codereactor/horizontal.png" />
+    <body onload="onload()" id="main">
+        <img id="logo" src="https://cdn.codereactor.tk/codereactor/horizontal.png" />
+        <div id="content">
+            <h1>404 Not Found</h1>
             <p>
-                <a class="error">404 Not Found</a> <br /><br />
-                This link don't have a image or a archive, see the data structure in your <a class="link" href="https://github.com/CodeReactorInc/cdn.codereactor.tk">GitHub</a>.
+                This link don't have a image or a archive, see the data structure in your <a href="https://github.com/CodeReactorInc/cdn.codereactor.tk">GitHub</a>.
             </p>
         </div>
     </body>
